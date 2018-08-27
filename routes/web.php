@@ -23,5 +23,10 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'guest'], function(){
     Route::post('admin/login',['uses' => 'LoginController@authenticate'])->name('login.authenticate');
 });
 Route::group(['middleware' => 'auth.verify','namespace' => 'Admin'], function () {
-    Route::get('/admin',['uses' => 'IndexController@index'])->name('admin.index');
+
+    Route::get('admin',['uses' => 'IndexController@index'])->name('admin.index');
+    Route::get('admin/logout',['uses' => 'LoginController@logout'])->name('login.logout');
+    /**Notice**/
+    Route::get('admin/notice',['uses' => 'NoticeController@index'])->name('notice.index');
+    /**/////**/
 });

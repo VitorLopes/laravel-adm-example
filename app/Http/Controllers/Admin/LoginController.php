@@ -22,4 +22,10 @@ class LoginController extends Controller
         return redirect('/admin/login')
                 ->with('status', 'Usuário inválido');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/admin');
+    }
 }
