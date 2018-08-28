@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 'public-local',
 
     /*
     |--------------------------------------------------------------------------
@@ -51,6 +51,12 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
+            'visibility' => 'public',
+        ],
+
+        'public-local' => [
+            'driver' => 'local',
+            'root' => public_path(),
             'visibility' => 'public',
         ],
 

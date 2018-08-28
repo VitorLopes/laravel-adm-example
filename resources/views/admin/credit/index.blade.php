@@ -5,13 +5,13 @@
     <table class="table table-condensed">
         <tr>
             <th style="width: 15%" class="text-center">Id</th>
-            <th class="text-center">Titulo</th>
+            <th class="text-center">Descrição</th>
             <th style="width: 15%" class="text-center">...</th>
         </tr>
         @foreach($model as $item)
         <tr>
             <td class="text-center">{{$item->id}}</td>
-            <td>{{$item->title}}</td>
+            <td>{{$item->name}}</td>
             <td class="text-center">
                 @include('admin.utils.button-edit-remove')
             </td>

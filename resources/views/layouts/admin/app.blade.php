@@ -58,6 +58,7 @@
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">Diversos</li>
                             <li><a href="/admin/notice">Noticias</a></li>
+                            <li><a href="/admin/credit">Créditos</a></li>
                             <!--<li role="separator" class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
                             <li><a href="#">Separated link</a></li>
@@ -82,7 +83,9 @@
     </nav>
 
     <div class="container">
+        @include('admin.utils.panel-header',['title' => $title])
         @yield('content')
+        @include('admin.utils.panel-botton')
     </div>
 
     <script src="/js/jquery.min.js"></script>

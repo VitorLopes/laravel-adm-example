@@ -1,0 +1,1 @@
+{{ $model->appends(['filter' => isset($filter)?$filter:''])->links() }}
