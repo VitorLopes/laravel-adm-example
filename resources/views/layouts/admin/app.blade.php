@@ -9,6 +9,7 @@
     <link rel="icon" href="../../favicon.ico">
     <title>Setor Administrativo</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/input-file.css" rel="stylesheet">
     <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <link href="/css/navbar-fixed-top.css" rel="stylesheet">
     <!--[if lt IE 9]><script src="/js/ie8-responsive-file-warning.js"></script><![endif]-->

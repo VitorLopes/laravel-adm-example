@@ -4,29 +4,33 @@
     <form action="{{route($routebasesave)}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         @if (isset($model))
-            <input type="hidden" name="id" value="{{$model->id}}">
+        {{Form::hidden('id', $model->id)}}
         @endif
         <div class="form-group">
-            <label for="inputTitle">Título</label>
-            <textarea name="title" id="inputTitle" class="form-control" required autofocus>{{isset($model) ? $model->title: old('title')}}</textarea>
+            {{Form::label('inputTitle', 'Título')}}
+            {{Form::textArea('title', isset($model) ? $model->title: old('title'), ['class' => 'form-control', 'id'=>"inputTitle", 'require', 'autofocus', 'placeholder'=>"Digite o título"])}}
         </div>
         <div class="form-group">
-            <label for="inputBody">Texto</label>
-            <textarea name="body" id="inputBody" class="form-control" required>{{isset($model) ? $model->body: old('body')}}</textarea>
+            {{Form::label('inputBody', 'Texto')}}
+            {{Form::textArea('body', isset($model) ? $model->body: old('body'), ['class'=>'form-control','id'=>'inputBody','placeholder'=>'Digite o texto','required'])}}
         </div>
         <div class="form-group">
-            <label for="selectCreditId">Credito</label>
-            <select class="form-control" name="credit_id" id="selectCreditId">
-            @if (isset($modelCredit))
-            @foreach($modelCredit as $key => $value)
-            <option value="{{$key}}"{!!isset($model)?($model->credit_id==$key?' selected="selected"':''):''!!}>{{$value}}</option>
-            @endforeach
-            @endif
-            </select>
+            {{Form::label('selectCreditId', 'Texto')}}
+            {{Form::select('credit_id',$modelCredit, isset($model) ? $model->credit_id :0,['id' => 'selectCreditId', 'class'=>'form-control'])}}
         </div>
         <div class="form-group">
-            <label for="filePhotoCover">Foto Capa</label>
-            <input type="file" id="filePhotoCover" name="photocover">
+            {{Form::label('filePhotoCover', 'Foto Capa')}}
+            <div class="input-group">
+                <label class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Browse&hellip; <input type="file" style="display: none;" id="filePhotoCover" name="photocover">
+                    </span>
+                </label>
+                <input type="text" class="form-control" readonly>
+            </div>
+            <span class="help-block">
+                Try selecting one or more files and watch the feedback
+            </span>
         </div>
         @if(isset($photocoverimage))
         <div style="margin-bottom: 10px;">
