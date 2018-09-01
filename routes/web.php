@@ -45,4 +45,13 @@ Route::group(['middleware' => 'auth.verify','namespace' => 'Admin'], function ()
     Route::get('admin/credit/delete/{id}',['uses' => 'CreditController@delete'])->name('credit.delete');
     Route::post('admin/credit',['uses' => 'CreditController@save'])->name('credit.save');
     /**/////**/
+    ///
+
+    /**Patiente**/
+    Route::get('admin/patient',['uses' => 'PatientController@index'])->name('patient.index');
+    Route::get('admin/patient/create',['uses' => 'PatientController@create'])->name('patient.create');
+    Route::get('admin/patient/edit/{id}',['uses' => 'PatientController@edit'])->name('patient.edit');
+    Route::get('admin/patient/delete/{id}',['uses' => 'PatientController@delete'])->name('patient.delete');
+    Route::post('admin/patient',['uses' => 'PatientController@save'])->name('patient.save');
+    /**/////**/
 });

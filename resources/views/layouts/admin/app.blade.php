@@ -57,9 +57,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerencial <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li class="dropdown-header">Consultório</li>
+                            <li><a href="{{route('patient.index')}}">Pacientes</a></li>
+                            <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Diversos</li>
-                            <li><a href="/admin/notice">Noticias</a></li>
-                            <li><a href="/admin/credit">Créditos</a></li>
+                            <li><a href="{{route('notice.index')}}">Noticias</a></li>
+                            <li><a href="{{route('notice.index')}}">Créditos</a></li>
                             <!--<li role="separator" class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
                             <li><a href="#">Separated link</a></li>
@@ -88,10 +91,11 @@
         @yield('content')
         @include('admin.utils.panel-botton')
     </div>
-
+    <!--http://1000hz.github.io/bootstrap-validator/#validator-overview-->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/validator.js"></script>
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
-
+    <script src="/js/input-text.js"></script>
 </body>
 </html>
