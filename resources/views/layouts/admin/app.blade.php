@@ -58,7 +58,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerencial <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="dropdown-header">Consultório</li>
-                            <li><a href="{{route('patient.index')}}">Pacientes</a></li>
+                            <li><a href="{{route('patient.index')}}">Paciente</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Diversos</li>
                             <li><a href="{{route('notice.index')}}">Noticias</a></li>
